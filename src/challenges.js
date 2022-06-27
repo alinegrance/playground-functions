@@ -25,18 +25,35 @@ function concatName(strArr) {
 function footballPoints(wins, ties) {
   let winScore = 3;
   let tieScore = 1;
-  return (winScore * wins) + (tieScore * ties);
-
+  return winScore * wins + tieScore * ties;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numbers) {
+  let highestNum = numbers[0];
+  let counter = 0;
+  for (let i = 1; i < numbers.length; i += 1) {
+    if (numbers[i] > highestNum) {
+      highestNum = numbers[i];
+    }
+  }
+  for (let j = 0; j < numbers.length; j += 1) {
+    if (numbers[j] === highestNum) {
+      counter += 1;
+    }
+  }
+  return counter;
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  if (Math.abs(mouse - cat1) < Math.abs(mouse - cat2)) {
+    return 'cat1';
+  }
+  if (Math.abs(mouse - cat2) < Math.abs(mouse - cat1)) {
+    return 'cat2';
+  }
+  return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
