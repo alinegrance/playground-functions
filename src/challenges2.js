@@ -37,20 +37,35 @@ function generatePhoneNumber(numbers) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if (lineA < lineB + lineC && (lineA > Math.abs(lineB - lineC))) {
+  if (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) {
     return true;
-  } else if (lineB < lineA + lineC && (lineB > Math.abs(lineA - lineC))) {
+  } else if (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC)) {
     return true;
-  } else if (lineC < lineB + lineA && (lineC > Math.abs(lineB - lineA))) {
+  } else if (lineC < lineB + lineA && lineC > Math.abs(lineB - lineA)) {
     return true;
   } else {
     return false;
   }
 }
 
-// Desafio 13mas
-function hydrate() {
-  // seu código aqui
+// Desafio 13
+function hydrate(drinks) {
+  let numberPattern = /\d+/g;
+  let numberStr = drinks.match(numberPattern); //string
+  let numbers = [];
+  for (let number of numberStr) {
+    numbers.push(Number(number));
+  }
+  let sum = 0;
+  for (let number of numbers) {
+    if (number >= 1 && number <= 9) {
+      sum += number;
+    }
+  }
+  if (sum === 1) {
+    return `${sum} copo de água`;
+  }
+  return `${sum} copos de água`;
 }
 
 module.exports = {
