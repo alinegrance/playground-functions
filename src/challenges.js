@@ -96,8 +96,16 @@ function decode(encodedStr) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(techs, person) {
+  if (techs.length === 0 || person.length === 0) {
+    return 'Vazio!';
+  }
+  techs.sort();
+  let techsWithName = [];
+  for (let tech of techs) {
+    techsWithName.push({ tech: tech, name: person });
+  }
+  return techsWithName;
 }
 
 module.exports = {
